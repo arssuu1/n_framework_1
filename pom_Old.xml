@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.singtel.naas.common</groupId>
+		<artifactId>naasparent-common</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.singtel.naas.framework</groupId>
+	<artifactId>naasframework</artifactId>
+	<packaging>jar</packaging>
+	<version>1.2.0-SNAPSHOT</version>
+
+	<properties>
+		<maven.test.skip>false</maven.test.skip>
+		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+	</properties>
+
+	<name>NaaS framework Project</name>
+
+	<!-- DO NOT override property that already define in parent pom -->
+
+	<dependencies>
+	 
+		<!-- Camel dependency -->
+		<!-- All camel version is managed by parent pom -->
+		<!-- DO NOT specify any version in the dependency -->
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-kafka</artifactId>
+		</dependency>
+
+		<!-- NaaS project dependency -->
+
+		<dependency>
+			<groupId>com.singtel.naas.common</groupId>
+			<artifactId>logger-naas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.singtel.naas.common</groupId>
+			<artifactId>datamodel</artifactId> 
+		</dependency>
+		<dependency>
+			<groupId>com.singtel.nsb.mobile</groupId>
+			<artifactId>common-nsb</artifactId> 
+		</dependency>
+
+		<!-- test dependency -->
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-spring</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+		</plugins>
+	</build>
+
+</project>

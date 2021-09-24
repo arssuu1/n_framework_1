@@ -1,0 +1,29 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    
+  labels:
+    app: naasframework
+  name: naasframework-pipeline
+
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: {}
+  output: {}
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: naasframework_dev
+      uri: >-
+        https://src.singtelnwk.com/scm/dpnaas/naasframework.git
+    sourceSecret:
+      name: bbpull
+    type: Git
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
+  triggers: []
